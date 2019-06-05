@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' show get;
-
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'dart:convert';
 import 'dreamno.dart';
-
+import '../chat/chat.dart';
 
 class Appss extends StatefulWidget {
   @override
@@ -11,7 +11,8 @@ class Appss extends StatefulWidget {
 }
 
 class _AppssState extends State<Appss> {
-
+  
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
   //Variables
   
  //Time Varables
@@ -38,6 +39,12 @@ class _AppssState extends State<Appss> {
   //End of Data Request variables
 
   //End of variables
+
+  //Notification
+  
+    
+
+  //End of Notification
   
   //Function variables
 
@@ -172,6 +179,30 @@ class _AppssState extends State<Appss> {
   //Common number ends
 
   //Function ends
+  // Future showNotification() async{
+  //   var time = new Time(3,51, 0);
+  //   var androidPlatformChannelSpecifics =
+  //   new AndroidNotificationDetails('repeatDailyAtTime channel id',
+  //       'repeatDailyAtTime channel name', 'repeatDailyAtTime description');
+  //   var iOSPlatformChannelSpecifics =
+  //   new IOSNotificationDetails();
+  //   var platformChannelSpecifics = new NotificationDetails(
+  //   androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+  //   await flutterLocalNotificationsPlugin.showDailyAtTime(
+  //       0,
+  //       'Teer Result Time',
+  //       'Open The App and check for the Result',
+  //       time,
+  //       platformChannelSpecifics);
+  // }
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   showNotification();
+
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -181,7 +212,16 @@ class _AppssState extends State<Appss> {
           centerTitle: true,
           backgroundColor: Color.fromRGBO(12,17, 53, 100),
           elevation: 0.5,
-          actions: <Widget>[Icon(Icons.chat)],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.chat),
+              onPressed: (){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => chatt()),
+                  );
+              }
+            ),
+          ],
           iconTheme: new IconThemeData(color: Colors.blueAccent),
         ),
         floatingActionButton: FloatingActionButton(

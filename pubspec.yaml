@@ -27,6 +27,10 @@ dependencies:
   http: any
   intl: ^0.15.8
   csv: ^4.0.3
+  flutter_local_notifications: ^0.7.1+1 
+  firebase_auth: 
+  firebase_database:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "823795510125",
+    "firebase_url": "https://teer-result-284a3.firebaseio.com",
+    "project_id": "teer-result-284a3",
+    "storage_bucket": "teer-result-284a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823795510125:android:6e6c9715da540f81",
+        "android_client_info": {
+          "package_name": "com.example.terr_result"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823795510125-ourh9bufssl9f9j5s72jfu3goa5kpkrf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.terr_result",
+            "certificate_hash": "fd053e3ee2ff99a6ade726ed8776184b95e5ca21"
+          }
+        },
+        {
+          "client_id": "823795510125-f56ofhamu3stp1bjt9gb8hi5r9r110po.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_98-8adpd1am6A-9f6ZdwcghyDW7nJ2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823795510125-f56ofhamu3stp1bjt9gb8hi5r9r110po.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

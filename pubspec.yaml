@@ -31,6 +31,8 @@ dependencies:
   firebase_auth: 
   firebase_database:
   firebase_core:
+  firebase_messaging: ^5.0.2
+
 
 dev_dependencies:
   flutter_test:

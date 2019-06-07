@@ -12,8 +12,8 @@ class chatt extends StatelessWidget {
       appBar: AppBar(
           title: Text("Chat Room",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(12,17, 53, 100),
-        elevation: 0.5,
+        backgroundColor: Color.fromRGBO(12,17, 53, 50),
+        elevation: 0.0,
       ),
       
       body: MyHomePage(),

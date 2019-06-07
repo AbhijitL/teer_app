@@ -184,8 +184,8 @@ class _AppssState extends State<Appss> {
         appBar: AppBar(
           title: Text("Teer result",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(12,17, 53, 100),
-          elevation: 0.5,
+          backgroundColor: Color.fromRGBO(12,17, 53, 50.0),
+          elevation: 0.0,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.chat),
@@ -221,6 +221,7 @@ class _AppssState extends State<Appss> {
             children: <Widget>[
               DrawerHeader(
                 child: Container(
+                  
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[

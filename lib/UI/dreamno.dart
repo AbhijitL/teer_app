@@ -39,8 +39,8 @@ class _TableLayoutState extends State<TableLayout> {
         appBar: AppBar(
           title: Text("Dream no",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(12,17, 53, 100),
-          elevation: 0.5,
+          backgroundColor: Color.fromRGBO(12,17, 53, 50),
+          elevation: 0.0,
           //actions: <Widget>[Icon(Icons.chat)],
           iconTheme: new IconThemeData(color: Colors.blueAccent),
         ),

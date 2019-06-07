@@ -79,10 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: TextFormField(
                         style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
-                          border: new  OutlineInputBorder(
-                            borderSide: new BorderSide(color: Colors.white),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white,width: 0.0)
                           ),
-                          
+                          border: new OutlineInputBorder(),
                         ),
                         initialValue: "",
                         onSaved: (val) => board.subject = val,
@@ -95,7 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: TextFormField(
                         style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: const BorderSide(color: Colors.white,width: 0.0)
+                          ),
+                          border: new OutlineInputBorder(),
                         ),
                         initialValue: "",
                         onSaved: (val) => board.body = val,

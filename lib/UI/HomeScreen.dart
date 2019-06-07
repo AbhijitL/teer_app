@@ -214,7 +214,7 @@ class _AppssState extends State<Appss> {
         ),
         drawer: Theme(
           data: Theme.of(context).copyWith(
-            canvasColor: Color.fromRGBO(39, 42, 76, 30.0),
+            canvasColor: Color.fromRGBO(39, 42, 76, 50.0),
           ),
           child: Drawer(
           child:ListView(
@@ -237,7 +237,9 @@ class _AppssState extends State<Appss> {
           ),
         ),
         ),
-        body: Container(
+        body:ListView(
+        children: <Widget>[   
+        Container(
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
@@ -373,7 +375,8 @@ class _AppssState extends State<Appss> {
           
           ),
         ),
-      
+        ],
+        ),
     );
   }
 }

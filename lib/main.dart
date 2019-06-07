@@ -4,6 +4,7 @@ import 'chat/chat.dart';
 void main(){
   runApp(MaterialApp(
     title: "Teer Result",
+    debugShowCheckedModeBanner: false,
     home: Appss(),
   ));
 }

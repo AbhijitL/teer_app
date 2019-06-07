@@ -5,6 +5,9 @@ void main(){
   runApp(MaterialApp(
     title: "Teer Result",
     debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      fontFamily: 'Poppins',
+    ),
     home: Appss(),
   ));
 }

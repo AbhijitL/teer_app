@@ -14,6 +14,7 @@ class chatt extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromRGBO(12,17, 53, 50),
         elevation: 0.0,
+        iconTheme: new IconThemeData(color: Colors.blueAccent),
       ),
       
       body: MyHomePage(),

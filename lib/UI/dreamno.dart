@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
-import 'dart:async' show Future;
+
 import 'package:flutter/services.dart' show rootBundle;
 
 class TableLayout extends StatefulWidget {
@@ -41,8 +41,6 @@ class _TableLayoutState extends State<TableLayout> {
           centerTitle: true,
           backgroundColor: Color.fromRGBO(12,17, 53, 50),
           elevation: 0.0,
-          //actions: <Widget>[Icon(Icons.chat)],
-          iconTheme: new IconThemeData(color: Colors.blueAccent),
         ),
         //floatingActionButton: FloatingActionButton( onPressed: load,child: Icon(Icons.refresh),),
         body: ListView(

@@ -15,6 +15,7 @@ class Appss extends StatefulWidget {
 class _AppssState extends State<Appss> {
   
   //Variables
+
   
  //Time Varables
   var today = new DateTime.now();
@@ -23,8 +24,8 @@ class _AppssState extends State<Appss> {
   var year = new  DateTime.now().year;
   int timeNowMin = new TimeOfDay.now().minute;
   int timeNowHour = new TimeOfDay.now().hour;
-  int restrictedMin = 30;
-  int restrictedHour = 16;
+  int restrictedHourFR = 15;
+  int restrictedHourSR = 16;
   //End of time
 
   //DataRequest variables
@@ -38,16 +39,14 @@ class _AppssState extends State<Appss> {
   int result1 = 0;
   var sr1 = 0;
   //End of Data Request variables
-
-  //End of variables
-
-  //Notification
   
-    
-
-  //End of Notification
+  //End of variables
   
   //Function variables
+
+  String TodayIsSundayString(){
+    return "Sunday";
+  }
 
   bool isSunday(){
       if(today.weekday == 7){
@@ -58,6 +57,10 @@ class _AppssState extends State<Appss> {
   Future<String> fetchData1 ()async{
     var response1 = await get("http://motyar.info/webscrapemaster/api/?url=http://teertoday.com/&xpath=/html/body/div[5]/div/table/tbody/tr[3]/td[1]#vws");
     List teerModel =  json.decode(response1.body);
+    if(timeNowHour < restrictedHourFR){
+      result = 0;
+      print("No can't get for FR");
+    }else{
     var line = teerModel[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
     var line1 = int.parse(line.toString());
     setState(() {
@@ -67,15 +70,17 @@ class _AppssState extends State<Appss> {
         result = line1;
       }
     });
+    }
+    
     print("$timeNowHour");
     print("$timeNowMin");    
   } 
   Future<String> fetchData2 ()async{
     var response2 = await get("http://motyar.info/webscrapemaster/api/?url=http://teertoday.com/&xpath=/html/body/div[5]/div/table/tbody/tr[3]/td[2]#vws");
     List teerModel2 =  json.decode(response2.body);
-    if(timeNowHour <=restrictedHour && timeNowMin <= restrictedMin){
+    if(timeNowHour <=restrictedHourSR){
       result1 = 0;
-      print("No can't get");
+      print("No can't get for SR");
     }else{
       var sr = teerModel2[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
       var sr1 = int.parse(sr.toString());
@@ -284,9 +289,9 @@ class _AppssState extends State<Appss> {
                   Center(
                     child: Text("Today Result",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                   ),
-                  Container(margin: EdgeInsets.only(bottom: 10.0),),
+                  //Container(margin: EdgeInsets.only(bottom: 10.0),),
                   Center(
-                    child: Text("$day/$month/$year",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                    child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                   ),
                   Container(margin: EdgeInsets.only(bottom: 10.0),),
                   Table(
@@ -296,7 +301,7 @@ class _AppssState extends State<Appss> {
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("F/R",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                          new Text("F/R (4:25)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
                           new Text("$result",
                           style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                         ],
@@ -307,7 +312,7 @@ class _AppssState extends State<Appss> {
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("S/R",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                          new Text("S/R (5:25)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                           new Text("$result1",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                         ],
                       ),)
@@ -343,7 +348,7 @@ class _AppssState extends State<Appss> {
                     ),
                     Container(margin: EdgeInsets.only(top: 5.0),),
                     Center(
-                      child: Text("$day/$month/$year",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                      child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
                     ),
                     Container(margin: EdgeInsets.only(top: 10.0),),
                     Table(

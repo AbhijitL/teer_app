@@ -49,7 +49,7 @@ class aboutMe extends StatelessWidget {
             color: Colors.cyanAccent,  
           ),
           child: Center(
-            child: Text("This app is Develop by MilkandEgg studio founded by two sibling from a remote village in the district of jiribam,Manipur,India.They are hobby developers who are still in schools.",
+            child: Text("This app is Develop by MilkandEgg studio founded by two sibling from a remote village in the district of jiribam,Manipur,India.They are hobby developers who are still in schools.For any equiry please send email to us in this link.",
             style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w800),
             ),
           ),

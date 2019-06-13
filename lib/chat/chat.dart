@@ -84,6 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderSide: const BorderSide(color: Colors.white,width: 0.0)
                           ),
                           border: new OutlineInputBorder(),
+                          hintText: "Tittle",
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                         initialValue: "",
                         onSaved: (val) => board.subject = val,
@@ -92,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     ListTile(
-                      leading: Icon(Icons.message,color: Colors.pinkAccent,),
+                      leading: Icon(Icons.message,color: Colors.blueAccent,),
                       title: TextFormField(
                         style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
@@ -100,6 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderSide: const BorderSide(color: Colors.white,width: 0.0)
                           ),
                           border: new OutlineInputBorder(),
+                          hintText: "Write something here",
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                         initialValue: "",
                         onSaved: (val) => board.body = val,

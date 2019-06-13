@@ -251,7 +251,7 @@ class _AppssState extends State<Appss> {
               ),
               ListTile(
                 leading: Icon(Icons.person,color: Colors.pinkAccent,),
-                title: Text("About",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                title: Text("About us",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                 onTap: (){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context) => aboutMe()),

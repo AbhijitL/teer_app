@@ -49,15 +49,23 @@ class aboutMe extends StatelessWidget {
             color: Colors.cyanAccent,  
           ),
           child: Center(
-            child: Text("This app is Develop by MilkandEgg studio founded by two sibling from a remote village in the district of jiribam,Manipur,India.They are hobby developers who are still in schools.For any equiry please send email to us in this link.",
+            child: Text("This app is Develop by MilkandEgg studio founded by two sibling from a remote village in the district of jiribam,Manipur,India.They are hobby developers who are still in schools. For any equiry please click on the contact.",
             style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w800),
             ),
           ),
           ),  
         ),
-        Center(
-          child: Container(
-      child: Ink(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text("Contact",style: TextStyle(fontSize: 20.0,color: Colors.white)),
+            Text("Website",style: TextStyle(fontSize: 20.0,color: Colors.white)),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+        Ink(
         decoration: ShapeDecoration(
           color: Colors.lightBlue,
           shape: CircleBorder(),
@@ -65,12 +73,27 @@ class aboutMe extends StatelessWidget {
         child: IconButton(
           icon: Icon(Icons.link),
           color: Colors.white,
+        
           onPressed: () {
-            launch("https://abhijitl.github.io");
+            launch("http://www.123formbuilder.com/form-4870175/my-form");
           },
         ),
       ),
-    ),
+          Ink(
+        decoration: ShapeDecoration(
+          color: Colors.lightBlue,
+          shape: CircleBorder(),
+        ),
+        child: IconButton(
+          icon: Icon(Icons.open_in_browser),
+          color: Colors.white,
+          onPressed: () {
+            launch("http://www.abhijitl.github.io");
+          },
+        ),
+      ),
+
+          ],
         ),
         ],
         ),

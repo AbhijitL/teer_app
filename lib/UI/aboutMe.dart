@@ -88,7 +88,7 @@ class aboutMe extends StatelessWidget {
           icon: Icon(Icons.open_in_browser),
           color: Colors.white,
           onPressed: () {
-            launch("http://www.abhijitl.github.io");
+            launch("https://abhijitl.github.io/");
           },
         ),
       ),

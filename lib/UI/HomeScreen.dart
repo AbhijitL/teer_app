@@ -24,8 +24,10 @@ class _AppssState extends State<Appss> {
   var year = new  DateTime.now().year;
   int timeNowMin = new TimeOfDay.now().minute;
   int timeNowHour = new TimeOfDay.now().hour;
-  int restrictedHourFR = 15;
-  int restrictedHourSR = 16;
+  int restrictedHourFR = 16;
+  int restrictedMinFr = 15;
+  int restrictedHourSR = 17;
+  int restrictedMinSr = 15;
   //End of time
 
   //DataRequest variables
@@ -57,12 +59,33 @@ class _AppssState extends State<Appss> {
   Future<String> fetchData1 ()async{
     var response1 = await get("http://motyar.info/webscrapemaster/api/?url=http://teertoday.com/&xpath=/html/body/div[5]/div/table/tbody/tr[3]/td[1]#vws");
     List teerModel =  json.decode(response1.body);
-    if(timeNowHour < restrictedHourFR){
-      result = 0;
-      print("No can't get for FR");
-    }else{
+    if(timeNowHour <= restrictedHourFR){
+      if(timeNowMin < restrictedHourFR){
+        result = 0;
+        print("i cant get fr 2");
+      }else{
+            if(timeNowHour == restrictedHourFR){
+              var line = teerModel[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
+              var line1 = int.parse(line.toString());
+              print("can get FR");
+              setState(() {
+                if(isSunday() == true){
+                result = 0;
+              }else{
+                result = line1;
+              }
+              });
+            }else{
+              result= 0;
+              print("can't get fr 3");
+            }
+          }
+      print("i cant get fr 1");
+    }  
+    else{
     var line = teerModel[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
     var line1 = int.parse(line.toString());
+    print("can get FR");
     setState(() {
       if(isSunday() == true){
         result = 0;
@@ -79,12 +102,31 @@ class _AppssState extends State<Appss> {
     var response2 = await get("http://motyar.info/webscrapemaster/api/?url=http://teertoday.com/&xpath=/html/body/div[5]/div/table/tbody/tr[3]/td[2]#vws");
     List teerModel2 =  json.decode(response2.body);
     if(timeNowHour <=restrictedHourSR){
-      result1 = 0;
-      print("No can't get for SR");
+      if(timeNowMin<restrictedMinSr){
+        result1= 0;
+        print("can't get sr 2");
+      }else{
+        if(timeNowHour == restrictedHourSR){
+          var sr = teerModel2[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
+          var sr1 = int.parse(sr.toString());
+          print("I can GEt sr");
+          setState(() {
+            if(isSunday() == true){
+                result1 = 0;
+            }else{
+                result1 = sr1;
+            }
+          });
+        }else{
+          result1 = 0;
+          print("cant get sr 3");
+        }
+      }
+      print("cant get sr 1");
     }else{
       var sr = teerModel2[0]["text"].replaceAll(new RegExp(r"(\s\n)"), "");//saviour of the day
       var sr1 = int.parse(sr.toString());
-      print("I can GEt");
+      print("I can GEt sr");
       setState(() {
       if(isSunday() == true){
         result1 = 0;

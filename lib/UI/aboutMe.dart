@@ -37,7 +37,7 @@ class aboutMe extends StatelessWidget {
             color: Colors.blueAccent,
             fontFamily: 'Pacifico',
             fontWeight: FontWeight.w400, 
-          ),
+          ),  
           ),
         ),
         Container(

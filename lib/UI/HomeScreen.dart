@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' show get;
 import 'dart:convert';
 import 'dreamno.dart';
@@ -227,6 +228,10 @@ class _AppssState extends State<Appss> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return Scaffold(
         backgroundColor: Color.fromRGBO(39, 42, 76, 30.0),
         appBar: AppBar(
@@ -343,7 +348,7 @@ class _AppssState extends State<Appss> {
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("F/R (4:25)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                          new Text("F/R (4:15)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
                           new Text("$result",
                           style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                         ],
@@ -354,7 +359,7 @@ class _AppssState extends State<Appss> {
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("S/R (5:25)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                          new Text("S/R (5:15)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                           new Text("$result1",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
                         ],
                       ),)
@@ -366,7 +371,34 @@ class _AppssState extends State<Appss> {
                 ],
                 ),
               ),
-              Container(margin: EdgeInsets.only(top: 60.0),),
+              Container(margin: EdgeInsets.only(top: 15.0),),
+              //Todo Puts ads here
+              Container(
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Color.fromRGBO(12,17, 53, 100),
+                  boxShadow: [
+                    new BoxShadow(
+                      color: Colors.black87,
+                      offset: new Offset(1.0, 1.0),
+                      blurRadius: 2.0,
+                      
+                    ),
+                  ]
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Center(
+                      child: Text("Ads Reserved Space",
+                        style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w900,)
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              //End Ads Reserved space
+              Container(margin: EdgeInsets.only(top: 15.0),),
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 40),
                 

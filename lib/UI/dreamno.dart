@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 
 class TableLayout extends StatefulWidget {
   @override
@@ -27,13 +28,13 @@ class _TableLayoutState extends State<TableLayout> {
 
   @override
   void initState() {
-    
     super.initState();
     load();
   }
   
   @override
   Widget build(BuildContext context) {
+    
     return  Scaffold(
         backgroundColor: Color.fromRGBO(39, 42, 76, 100.0),
         appBar: AppBar(

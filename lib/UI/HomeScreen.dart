@@ -247,7 +247,7 @@ class _AppssState extends State<Appss> {
           iconTheme: new IconThemeData(color: Colors.blueAccent),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Color.fromRGBO(12, 17, 53, 30), 
+          backgroundColor: Color(0xFF0A0E21),
           onPressed: (){
             fetchData1();
             fetchData2();
@@ -258,7 +258,7 @@ class _AppssState extends State<Appss> {
             fetchData7();
             fetchData8();
           },
-          child: Icon(Icons.refresh,),
+          child: Icon(Icons.refresh,color: Colors.tealAccent),
         ),
         drawer: Theme(
           data: Theme.of(context).copyWith(

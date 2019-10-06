@@ -1,7 +1,7 @@
 # terr_result
 
 A full fledge ready to go to the market app built for fun purpose.
-This app has functionaly to chat with everyone who use this app.
+This app has functionaly to chat with everyone who use this app and has a notification system to notify users in specific time.
 To make the chat work you have to make a firebase project and setup in to this project.
 Here is the link on how to setup firebase--> https://youtu.be/DqJ_KjFzL9I
 and lastly use your own key here is the link on how to setup. https://flutter.dev/docs/deployment/android

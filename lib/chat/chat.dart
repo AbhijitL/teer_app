@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'model/board.dart';
-
+import '../const.dart';
 
 class chatt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(39, 42, 76, 30.0),
+      backgroundColor: sysColor,
       appBar: AppBar(
-          title: Text("Chat Room",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
+          title: Text("Chat Room",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(12,17, 53, 50),
         elevation: 0.0,
-        iconTheme: new IconThemeData(color: Colors.blueAccent),
       ),
       
       body: MyHomePage(),
@@ -46,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      color:Color.fromRGBO(39, 42, 76, 30.0), 
+       
       child: Column(
         children: <Widget>[
           Flexible(
@@ -76,17 +74,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   direction: Axis.vertical,
                   children: <Widget>[
                     ListTile(
-                      leading: Icon(Icons.subject,color: Colors.pinkAccent,),
+                      leading: Icon(Icons.subject,color: iconColor,),
                       title: TextFormField(
-                        style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w300),
+                        style: TextStyle(fontSize: 14.0,color: fontColor,fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                           enabledBorder: const OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white,width: 0.0)
+                            borderSide: const BorderSide(color: fontColor,width: 0.0)
                           ),
                           border: new OutlineInputBorder(),
                           hintText: "Tittle",
                           hintStyle: TextStyle(
-                            color: Colors.white,
+                            color: fontColor,
                           ),
                         ),
                         initialValue: "",
@@ -96,17 +94,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     ListTile(
-                      leading: Icon(Icons.message,color: Colors.blueAccent,),
+                      leading: Icon(Icons.message,color: iconColor,),
                       title: TextFormField(
-                        style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w300),
+                        style: TextStyle(fontSize: 14.0,color: fontColor,fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                           enabledBorder: const OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white,width: 0.0)
+                            borderSide: const BorderSide(color: fontColor,width: 0.0)
                           ),
                           border: new OutlineInputBorder(),
                           hintText: "Write something here",
                           hintStyle: TextStyle(
-                            color: Colors.white,
+                            color: fontColor,
                           ),
                         ),
                         initialValue: "",
@@ -117,8 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     //Send or Post button
                     FlatButton(
-                      child: Text("Post",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
-                      color: Color.fromRGBO(12,17, 53, 100),
+                      child: Text("Post",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
+                      color: boxColor,
                       onPressed: () {
                         handleSubmit();
                       },

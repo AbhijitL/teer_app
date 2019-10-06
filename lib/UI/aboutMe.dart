@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:terr_result/const.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -9,11 +10,10 @@ class aboutMe extends StatelessWidget {
   Widget build(BuildContext context) {
     //Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(39, 42, 76, 100.0),
+      backgroundColor: sysColor,
         appBar: AppBar(
           title: Text("About us",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(12,17, 53, 500),
           elevation: 0.0,
         ),
         body:ListView(
@@ -34,7 +34,7 @@ class aboutMe extends StatelessWidget {
           child: Text("Milk and Egg Studios",
           style: TextStyle(
             fontSize: 24.0,
-            color: Colors.blueAccent,
+            color: fontColor,
             fontFamily: 'Pacifico',
             fontWeight: FontWeight.w400, 
           ),  
@@ -46,7 +46,7 @@ class aboutMe extends StatelessWidget {
             padding: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: Colors.cyanAccent,  
+            color: boxColor,  
           ),
           child: Center(
             child: Text("This app is Develop by MilkandEgg studio founded by two sibling from a remote village in the district of jiribam, Manipur, India.They are hobby developers who are still in schools. For any equiry please click on the contact.",
@@ -58,8 +58,8 @@ class aboutMe extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text("Contact",style: TextStyle(fontSize: 20.0,color: Colors.white)),
-            Text("Website",style: TextStyle(fontSize: 20.0,color: Colors.white)),
+            Text("Contact",style: TextStyle(fontSize: 20.0,color: fontColor)),
+            Text("Website",style: TextStyle(fontSize: 20.0,color: fontColor)),
           ],
         ),
         Row(
@@ -67,12 +67,12 @@ class aboutMe extends StatelessWidget {
           children: <Widget>[
         Ink(
         decoration: ShapeDecoration(
-          color: Colors.lightBlue,
+          color: boxColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.link),
-          color: Colors.white,
+          color: fontColor,
         
           onPressed: () {
             launch("http://www.123formbuilder.com/form-4870175/contact-us");
@@ -81,12 +81,12 @@ class aboutMe extends StatelessWidget {
       ),
           Ink(
         decoration: ShapeDecoration(
-          color: Colors.lightBlue,
+          color: boxColor,
           shape: CircleBorder(),
         ),
         child: IconButton(
           icon: Icon(Icons.open_in_browser),
-          color: Colors.white,
+          color: fontColor,
           onPressed: () {
             launch("https://abhijitl.github.io/");
           },

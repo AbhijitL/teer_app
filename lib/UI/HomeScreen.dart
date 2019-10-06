@@ -5,8 +5,8 @@ import 'dart:convert';
 import 'dreamno.dart';
 import '../chat/chat.dart';
 import 'aboutMe.dart';
-
-
+import '../const.dart';
+import 'package:flutter/services.dart';
 
 class Appss extends StatefulWidget {
   @override
@@ -228,16 +228,12 @@ class _AppssState extends State<Appss> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return Scaffold(
-        backgroundColor: Color.fromRGBO(39, 42, 76, 30.0),
+      backgroundColor: sysColor,
         appBar: AppBar(
-          title: Text("Teer result",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
+          title: Text("Teer result",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(12,17, 53, 50.0),
           elevation: 0.0,
           actions: <Widget>[
             IconButton(
@@ -249,10 +245,10 @@ class _AppssState extends State<Appss> {
               }
             ),
           ],
-          iconTheme: new IconThemeData(color: Colors.blueAccent),
+          
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xFF0A0E21),
+          backgroundColor: Color(0xFFD9D2B6),
           onPressed: (){
             fetchData1();
             fetchData2();
@@ -263,11 +259,11 @@ class _AppssState extends State<Appss> {
             fetchData7();
             fetchData8();
           },
-          child: Icon(Icons.refresh,color: Colors.tealAccent),
+          child: Icon(Icons.refresh,color: Colors.blueGrey),
         ),
         drawer: Theme(
           data: Theme.of(context).copyWith(
-            canvasColor: Color.fromRGBO(39, 42, 76,50),
+            canvasColor: Color(0xFFE4BE9E),
           ),
           child: Drawer(
           child:ListView(
@@ -278,18 +274,18 @@ class _AppssState extends State<Appss> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("Teer Result",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
-                      Text("A Simple app to check teer result and chat with other people ",style: TextStyle(fontSize: 18.0,color: Colors.white,fontWeight: FontWeight.w500),),
+                      Text("Teer Result",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
+                      Text("A Simple app to check teer result and chat with other people ",style: TextStyle(fontSize: 18.0,color: fontColor,fontWeight: FontWeight.w500),),
                     ],
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(12, 17, 53, 50),
+                  color: Color(0xFFE4BE9E),
                 ),
               ),
               ListTile(
                 leading: Icon(Icons.settings_system_daydream,color: Colors.pinkAccent,),
-                title: Text("Dream Number",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                title: Text("Dream Number",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
                 onTap: (){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TableLayout()),
@@ -298,7 +294,7 @@ class _AppssState extends State<Appss> {
               ),
               ListTile(
                 leading: Icon(Icons.person,color: Colors.pinkAccent,),
-                title: Text("About us",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                title: Text("About us",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
                 onTap: (){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context) => aboutMe()),
@@ -321,36 +317,29 @@ class _AppssState extends State<Appss> {
                 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  color: Color.fromRGBO(12,17, 53, 100),
-                  boxShadow: [
-                    new BoxShadow(
-                      color: Colors.black87,
-                      offset: new Offset(1.0, 1.0),
-                      blurRadius: 2.0,
-                      
-                    ),
-                  ]
+                  color:boxColor,
+                
                 ),
                 child:Column(
                 children: <Widget>[
                   Center(
-                    child: Text("Today Result",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                    child: Text("Today Result",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
                   ),
                   //Container(margin: EdgeInsets.only(bottom: 10.0),),
                   Center(
-                    child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                    child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
                   ),
                   Container(margin: EdgeInsets.only(bottom: 10.0),),
                   Table(
-                  border: TableBorder.all(width: 1.0,color: Colors.white),
+                  border: TableBorder.all(width: 1.0,color: fontColor),
                   children: [
                     TableRow(children: [
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("F/R (4:15)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                          new Text("F/R (4:15)",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
                           new Text("$result",
-                          style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                          style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
                         ],
                       ),)
                     ]
@@ -359,8 +348,8 @@ class _AppssState extends State<Appss> {
                       TableCell(child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          new Text("S/R (5:15)",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
-                          new Text("$result1",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900),),
+                          new Text("S/R (5:15)",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
+                          new Text("$result1",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900),),
                         ],
                       ),)
                     ]
@@ -373,30 +362,7 @@ class _AppssState extends State<Appss> {
               ),
               Container(margin: EdgeInsets.only(top: 15.0),),
               //Todo Puts ads here
-              Container(
-                padding: EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Color.fromRGBO(12,17, 53, 100),
-                  boxShadow: [
-                    new BoxShadow(
-                      color: Colors.black87,
-                      offset: new Offset(1.0, 1.0),
-                      blurRadius: 2.0,
-                      
-                    ),
-                  ]
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Center(
-                      child: Text("Ads Reserved Space",
-                        style: TextStyle(fontSize: 14.0,color: Colors.white,fontWeight: FontWeight.w900,)
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              
               //End Ads Reserved space
               Container(margin: EdgeInsets.only(top: 15.0),),
               Container(
@@ -404,38 +370,31 @@ class _AppssState extends State<Appss> {
                 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  color: Color.fromRGBO(12,17, 53, 100),
-                  boxShadow: [
-                    new BoxShadow(
-                      color: Colors.black87,
-                      offset: new Offset(1.0, 1.0),
-                      blurRadius: 2.0,
-                      
-                    ),
-                  ]
+                  color: boxColor,
+                  
                 ),
                 child: Column(
                   children: <Widget>[
                     Container(margin: EdgeInsets.only(top: 20.0),),
                     Center(
-                      child: Text("Common Number",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                      child: Text("Common Number",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
                     ),
                     Container(margin: EdgeInsets.only(top: 5.0),),
                     Center(
-                      child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                      child: Text("${(isSunday()==true)?TodayIsSundayString():"$day/$month/$year"}",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
                     ),
                     Container(margin: EdgeInsets.only(top: 10.0),),
                     Table(
-                      border: TableBorder.all(width: 1.0,color: Colors.white),
+                      border: TableBorder.all(width: 1.0,color: fontColor),
                       children: [
                         TableRow(
                           children: [TableCell(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
-                                new Text("Direct",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("House",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("Ending",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                                new Text("Direct",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("House",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("Ending",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
                               ],
                             ),
                           ),],
@@ -446,9 +405,9 @@ class _AppssState extends State<Appss> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
-                                new Text('$direct1',style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("$house1",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("$ending1",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                                new Text('$direct1',style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("$house1",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("$ending1",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
                               ],
                             ),
                           ),],
@@ -459,9 +418,9 @@ class _AppssState extends State<Appss> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
-                                new Text('$direct2',style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("$house2",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
-                                new Text("$ending2",style: TextStyle(fontSize: 20.0,color: Colors.white,fontWeight: FontWeight.w900,),),
+                                new Text('$direct2',style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("$house2",style: TextStyle(fontSize: 20.0,color: fontColor,fontWeight: FontWeight.w900,),),
+                                new Text("$ending2",style: TextStyle(fontSize: 20.0,color:fontColor,fontWeight: FontWeight.w900,),),
                               ],
                             ),
                           ),],

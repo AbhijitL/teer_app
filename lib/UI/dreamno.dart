@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:csv/csv.dart';
-
+import '../const.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
 
@@ -36,11 +36,10 @@ class _TableLayoutState extends State<TableLayout> {
   Widget build(BuildContext context) {
     
     return  Scaffold(
-        backgroundColor: Color.fromRGBO(39, 42, 76, 100.0),
+      backgroundColor: Color(0xFFE4BE9E),
         appBar: AppBar(
-          title: Text("Dream no",style: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),),
+          title: Text("Dream no",style: TextStyle(fontSize: 24.0,color: fontColor,fontWeight: FontWeight.w900),),
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(12,17, 53, 50),
           elevation: 0.0,
         ),
         //floatingActionButton: FloatingActionButton( onPressed: load,child: Icon(Icons.refresh),),
@@ -48,18 +47,12 @@ class _TableLayoutState extends State<TableLayout> {
           children: <Widget>[
             Container(margin: EdgeInsets.only(top: 20.0),),
         Table(
-          border: TableBorder.all(width: 1.0,color: Colors.white),
+          border: TableBorder.all(width: 1.0,color: fontColor),
           children: data.map((item){
             return TableRow(
               children: item.map((row){
-                return Text(row.toString(),style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w900,color: Colors.white,
-                shadows:[
-                  new Shadow(
-                    color: Colors.black87,
-                    offset: new Offset(1.0, 1.0),
-                    blurRadius: 2.0,
-                  )
-                ], 
+                return Text(row.toString(),style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w900,color:fontColor,
+                
                 ),);
               }).toList(),
             );

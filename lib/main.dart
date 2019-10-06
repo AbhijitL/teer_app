@@ -8,7 +8,9 @@ void main(){
     //showPerformanceOverlay: true,
     theme: ThemeData(
       fontFamily: 'Poppins',
-      iconTheme: new IconThemeData(color: Colors.blueAccent),
+      iconTheme: new IconThemeData(color: Colors.white),
+      primaryColor: Color(0xFFE4BE9E),
+      accentColor: Color(0xFFE4BE9E)
     ),
     home: Appss(),
   ));

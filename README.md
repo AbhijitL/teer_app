@@ -5,7 +5,7 @@ This app has functionaly to chat with everyone who use this app and has a notifi
 To make the chat work you have to make a firebase project and setup in to this project.
 Here is the link on how to setup firebase--> https://youtu.be/DqJ_KjFzL9I
 and lastly use your own key here is the link on how to setup. https://flutter.dev/docs/deployment/android
-## 🙅.Use only for Personal.🙅 NO-->🕲🕲
+## 🙅.Only for Personal use.🙅 NO-->🕲🕲
 ## Some ScreenShots
 1.
 

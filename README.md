@@ -21,9 +21,10 @@ and lastly use your own key here is the link on how to setup. https://flutter.de
 
 4.
 
-<img src="https://i.ibb.co/18Tjs3V/5.jpg" width="350" title="smsg = g23sd2AHQ11w">
+<img src="https://i.ibb.co/KWR4Dfj/Screenshot-06-Oct-2019-8-08-54-PM.png" width="350" title="smsg = g23sd2AHQ11w">
 
 
 ## Important
 
-Please don't use the images on the asset folder it is a Copyrighted content.
+Please don't use the image on the asset folder it is a Copyrighted content.
+So no no please.

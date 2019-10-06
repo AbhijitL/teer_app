@@ -24,3 +24,6 @@ and lastly use your own key here is the link on how to setup. https://flutter.de
 <img src="https://i.ibb.co/18Tjs3V/5.jpg" width="350" title="smsg = g23sd2AHQ11w">
 
 
+## Important
+
+Please don't use the images on the asset folder it is a Copyrighted content.

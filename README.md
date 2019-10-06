@@ -25,6 +25,6 @@ and lastly use your own key here is the link on how to setup. https://flutter.de
 
 
 ## Important
-
+It is a CC license NonCommercial.
 Please don't use the image on the asset folder it is a Copyrighted content.
 So no no please.
